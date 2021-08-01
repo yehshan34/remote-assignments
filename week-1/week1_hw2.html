@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+   <meta charset="utf-8">
+   <title>Week-1 Homework</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+   
+   <style>
+     .nav {
+        display: flex;
+        height: 80px;
+        background: white;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 24px;
+     }
+     .nav_sitename {
+        color: #489846;
+        font-size: 36px;
+     }
+     .nav_list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        font-size: 18px;
+     }
+     .nav_list li {
+        margin-left: 12px;
+        padding: 12px 24px;
+        border-radius: 8px;
+        transition: background 0.1s;
+     }
+     .nav_list li.active, .nav_list li:hover{
+        background-color: #f58496;
+     }
+     .nav_list li.active a, .nav_list li:hover a {
+        color: white;
+     }
+     .nav_list li a {
+        text-decoration: none;
+        color: black;
+     }
+     .banner {
+        position: relative;
+        height: 300px;
+        background: url(bg.jpg) center/cover no-repeat;
+     }
+     .banner:after {
+        content: "";
+        position: absolute;
+        background: rgba(0,0,0,0.3);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+     } 
+     .banner h1 {
+        display: inline-block;
+        position: relative;
+        margin: 0;
+        color: white;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 60px;
+     }
+     h2 {
+        margin: 0;
+     }
+     .wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+     }
+     .section {
+        text-align: center;
+        margin-top: 40px;
+     }
+     .section_title {
+        display: inline-block;
+        font-size: 36px;
+        border-left: solid 22px #a3dea2;
+        padding-left: 16px;
+     }
+     .section_contents {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        line-height: 2em;
+        margin: 42px 0px;
+     }
+     .content {
+        margin: 0 auto;
+     }
+     .content img {
+        width: 350px;
+        height: 350px;
+     }
+     .button {
+        display: inline-block;
+        padding: 20px 40px;
+        font-size: 30px;
+        color: #3e613d;
+        background-color: #f9f9b5;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.1s;
+        margin-bottom: 50px;
+     }
+     .button:hover {
+        transform: scale(1.1);
+     }
+
+     @media screen and (min-width: 800px) and (max-width: 1200px){
+      .section_contents {
+        display: flex;
+        flex-wrap: wrap;
+      }
+     }
+
+     @media screen and (max-width: 800px){ 
+     .nav_list {
+        display: none;
+     }
+     .bar {
+        background-color: black;
+        padding: 2px 18px;
+        height: 2px;
+        display: block; 
+        margin: 6px 0;
+      } 
+     .menu_toggle {
+        display: block;
+        cursor: pointer;
+      }
+      .menu_toggle:hover {
+        cursor: pointer;
+      }
+     }
+     
+     @media screen and (max-width: 500px) {
+      .section_contents {
+        display: flex;
+        flex-wrap: column;
+      }
+     }
+   </style>
+  </head>
+
+  <body>
+    <nav class="nav">
+      <div class="nav_sitename">
+        Bite Me Now! 
+      </div>
+      <div class="menu_toggle" id="mobile_menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav_list">
+       <li class="active"><a href="#">來抽獎</a></li>
+       <li><a href="#">點餐囉</a></li>
+       <li><a href="#">查訂單</a></li>
+       <li><a href="#">Q & A</a></li>
+      </ul> 
+    </nav> 
+    <section class="banner">
+        <h1>咬我一口の廚房</h1>
+    </section>
+    <div class="wrapper">
+      <section class="section">
+        <h2 class="section_title">
+          給您最健康的飲食選擇
+        </h2>
+        <div class="section_contents">
+          <div class="content">
+            <img src="f-001.png" />
+            <p>現代人生活忙碌，常以外食為主，導致慢性病及肥胖率大增。</p>
+          </div>
+          <div class="content">
+            <img src="f-002.png" />
+            <p>我們定期走訪農田，選用最天然、營養的食材，給您最好的。</p>
+          </div>
+          <div class="content">
+            <img src="f-002.png" />
+            <p>以最簡單的烹調方式處理，最大化忠實呈現食材原本的鮮味。</p>
+          </div>
+          <div class="content">
+            <img src="f-001.png" />
+            <p>讓大家體驗不需要過多調味，就能擁有千變萬化的食物口感。</p>
+          </div>
+        </div>
+        <div class="button">
+          開始點餐
+        </div>
+      </section>
+    </div>
+  </body>
+
+</html>
