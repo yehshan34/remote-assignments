@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Week3 hw3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        let ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState === 4) {
+                document.getElementById("ajax").innerHTML = ajax.responseText;
+            }
+        }
+        ajax.open("GET", "http://localhost:3000/getData?number=10");
+        ajax.send();
+
+        function calculate (){
+            let number = $("#number").val();
+            let request = new XMLHttpRequest();
+            request.open("GET", "/getData" + "?number=" + number);
+            request.onload = function () {
+                var content = document.getElementById("result");
+                content.innerHTML = request.responseText;
+            }
+            request.send();
+        }
+    </script>
+</head>
+<body>
+    <h1>Hello, Welcome to sum.html !</h1>
+    <div>
+        <span>*If you enter "http://localhost:3000/getData?number=10", the result will be :</span>
+        <br>
+        <p>1+2+3+4+5+6+7+8+9+10 =></p>
+        <span id="ajax"></span>
+    </div>
+    <hr>
+    <form>
+        <p>Now, it's your turn ! : )</p>
+        <p>Please enter any number below :</p>
+        <input type="text" name="number" id="number">
+        <input type="button" value="submit" id="submit" onclick="calculate()">
+    </form>
+    <br>
+    <p style="display:inline">The sum adding from 1 to this number is =></p>
+    <span id="result" style="text-decoration: underline"></span>
+</body>
+</html>
