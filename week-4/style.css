@@ -1,0 +1,18 @@
+h1 {	
+	text-align: center;
+	color: steelblue;
+}
+h2 {
+	text-decoration: underline;
+}
+.product {
+	text-align: center;
+}
+#products {
+	display: flex;
+	height: 200px;
+	background: lightblue;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 0 30px;
+}
